@@ -1,5 +1,5 @@
-package com.rackspace.puzzle
-import com.rackspace.puzzle.Ball
+package com.rackspace.Puzzle
+import com.rackspace.Puzzle.Ball
 
 class Scale {
 	ArrayList leftPlate = new ArrayList()
@@ -29,6 +29,8 @@ class Scale {
 			leftWeight += ball.weight
 		for(ball in rightPlate)
 			rightWeight += ball.weight
+			
+		println rightWeight+" versus "+leftWeight
 			
 		if(rightWeight < leftWeight)
 			return 1

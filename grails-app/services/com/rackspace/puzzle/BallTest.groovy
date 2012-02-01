@@ -1,6 +1,6 @@
-package com.rackspace.puzzle
-import com.rackspace.puzzle.Ball
-import com.rackspace.puzzle.Scale
+package com.rackspace.Puzzle
+import com.rackspace.Puzzle.Ball
+import com.rackspace.Puzzle.Scale
 
 class BallTest {
 	static def main()
@@ -11,14 +11,10 @@ class BallTest {
 		ArrayList balls = new ArrayList()
 		Scale scale = new Scale()
 		7.times {
-			if(!heavyBallSelected && random.nextInt(100)<50)
-			{
-				balls.add(new Ball(2.0))
-				heavyBallSelected = true
-			}
-			else
-				balls.add(new Ball())
+			balls.add(new Ball())
 		}
+		
+		balls[random.nextInt(7)].weight = 2.0
 		
 		for(ball in balls)
 			println ball.id+": "+ball.weight 
@@ -27,14 +23,14 @@ class BallTest {
 		scale.addBallLeft(balls[1])
 		scale.addBallLeft(balls[2])
 		
-		scale.addBallLeft(balls[3])
-		scale.addBallLeft(balls[4])
-		scale.addBallLeft(balls[5])
+		scale.addBallRight(balls[3])
+		scale.addBallRight(balls[4])
+		scale.addBallRight(balls[5])
 		
 		def result = scale.compare()
 		if(result<0)
 			println "Left is lighter"
-		else if(result > 0)
+		else if(result>0)
 			println "Right is lighter"
 		else
 			println "Both sides are even"

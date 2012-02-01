@@ -1,5 +1,5 @@
-package com.rackspace.puzzle
-import com.rackspace.puzzle.BallTest
+package com.rackspace.Puzzle
+import com.rackspace.Puzzle.BallTest
 
 class TestController {
 
