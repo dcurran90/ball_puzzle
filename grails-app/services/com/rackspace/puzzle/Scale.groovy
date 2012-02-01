@@ -23,9 +23,18 @@ class Scale {
 	def compare()
 	{
 		def leftWeight, rightWeight
+		leftWeight = 0
+		rightWeight = 0
 		for(ball in leftPlate)
 			leftWeight += ball.weight
 		for(ball in rightPlate)
 			rightWeight += ball.weight
+			
+		if(rightWeight < leftWeight)
+			return 1
+		else if(rightWeight > leftWeight)
+			return -1
+		else
+			return 0
 	}
 }

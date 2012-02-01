@@ -30,5 +30,13 @@ class BallTest {
 		scale.addBallLeft(balls[3])
 		scale.addBallLeft(balls[4])
 		scale.addBallLeft(balls[5])
+		
+		def result = scale.compare()
+		if(result<0)
+			println "Left is lighter"
+		else if(result > 0)
+			println "Right is lighter"
+		else
+			println "Both sides are even"
 	}
 }
