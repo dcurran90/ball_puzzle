@@ -7,6 +7,9 @@ class GameController {
 	def userSession = session["user"]
 	def scale = new Scale()
 	
+	/**
+	 * Displays the index page explaining the rules
+	 */
     def index = {
 	}
 	
@@ -38,6 +41,9 @@ class GameController {
 		}
 	}
 	
+	/**
+	 * Shows whether you succeeded or failed
+	 */
 	def results = {
 		if (userSession.highestBall.id == params.ball.toInteger()) {
 			render "<a href='reset'><img style='width: 100%; height: 100%' src=${createLinkTo(dir: 'images', file: 'winrar.png')} alt='Grails'/></a>"
@@ -47,6 +53,9 @@ class GameController {
 		}
 	}
 	
+	/**
+	 * Resets the userSession
+	 */
 	def reset = {
 		userSession?.reset()
 		scale?.reset()

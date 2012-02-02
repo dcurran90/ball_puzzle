@@ -34,8 +34,6 @@ class UserSession {
 	}
 	
 	/**
-	 * Reset
-	 * 
 	 * Resets the UserSession's state variables to their default state
 	 * 
 	 * @return

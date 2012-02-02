@@ -12,12 +12,12 @@ import com.rackspace.Puzzle.Ball
 class Scale
 {
 	/**
-	 * Doc
+	 * Weight of matter in left plate
 	 */
 	def leftWeight = 0
 	
 	/**
-	 * Doc
+	 * Weight of matter in right plate
 	 */
 	def rightWeight = 0
 	
