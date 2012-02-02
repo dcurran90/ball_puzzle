@@ -10,40 +10,46 @@ class GameController {
     def index = {
 	}
 	
+	/**
+	 * Does the advancement of the game.
+	 */
 	def trial = {
 		scale.reset()
-		if (!userSession)
+		if (!userSession) {
 			session["user"] = userSession = new UserSession()
+		}
 
-		if (params.derp)
+		if (params.derp) {
 			userSession.trialCount++
+		}
 			
 		for (int i = 0; i < 7; i++) {
 			if (params["ball" + i]) {
 				userSession.trials[i].isTested = true
-				userSession.trials[i].side = params["ball"+i]
+				userSession.trials[i].side = params["ball" + i]
 				
-				if (userSession.trials[i].side == "left")
+				if (userSession.trials[i].side == "left") {
 					scale.addBallLeft(userSession.trials[i].ball)
-				else if  (userSession.trials[i].side == "right")
+				}
+				else if  (userSession.trials[i].side == "right") {
 					scale.addBallRight(userSession.trials[i].ball)
+				}
 			}
 		}
 	}
 	
 	def results = {
-		def success = false
-		if (userSession.highestBall.id == params.ball.toInteger())
+		if (userSession.highestBall.id == params.ball.toInteger()) {
 			render "<a href='reset'><img style='width: 100%; height: 100%' src=${createLinkTo(dir: 'images', file: 'winrar.png')} alt='Grails'/></a>"
-		else
+		}
+		else {
 			render "<a href='reset'><img style='width: 100%; height: 100%' src=${createLinkTo(dir: 'images', file: 'epic_fail.jpg')} alt='Grails'/></a>"
+		}
 	}
 	
 	def reset = {
-		if (userSession)
-			userSession.reset()
-		if (scale)
-			scale.reset()
-		redirect (controller: "game", action: "trial")
+		userSession?.reset()
+		scale?.reset()
+		redirect(controller: "game", action: "trial")
 	}
 }

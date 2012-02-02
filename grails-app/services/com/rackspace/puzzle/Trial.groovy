@@ -10,8 +10,19 @@ import com.rackspace.Puzzle.Ball
  *
  */
 class Trial {
+	/**
+	 * The ball in the trial
+	 */
 	def ball
+	
+	/**
+	 * Whether it has been tested
+	 */
 	def isTested = false
+	
+	/**
+	 * The last result
+	 */
 	def side = "out"
 	
 	/**

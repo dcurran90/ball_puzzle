@@ -6,18 +6,28 @@ package com.rackspace.Puzzle
  * Ball
  * 
  * Represents a weighted ball, not to be confused with an Aperture Science Weighted Storage Cube.
- *
  */
 class Ball 
 {
+	/**
+	 * Weight of the ball
+	 */
 	def weight
+	
+	/**
+	 * Current ball?
+	 */
 	static curr_id = 0
+	
+	/**
+	 * Ball id.
+	 */
 	def id
 	
 	/**
 	 * Constructor
 	 * 
-	 * @param weight
+	 * @param weight Weight to give the ball.
 	 * @return void
 	 */
 	def Ball(weight = 1.0)
@@ -27,9 +37,8 @@ class Ball
 	}
 	
 	/**
-	 * ResetID
+	 * Resets the static id variable to 0.
 	 * 
-	 * Resets the static id variable to 0
 	 * @return void
 	 */
 	static def ResetID()

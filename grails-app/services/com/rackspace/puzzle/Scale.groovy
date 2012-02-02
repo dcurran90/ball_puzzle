@@ -9,14 +9,22 @@ import com.rackspace.Puzzle.Ball
  * Represents a virtual scale with two plates
  *
  */
-class Scale {
+class Scale
+{
+	/**
+	 * Doc
+	 */
 	def leftWeight = 0
+	
+	/**
+	 * Doc
+	 */
 	def rightWeight = 0
 	
 	/**
-	 * Adds a ball to the left plate
+	 * Adds a ball to the left plate.
 	 * 
-	 * @param ball
+	 * @param ball Ball to add.
 	 * @return void
 	 */
 	def addBallLeft(ball)
@@ -25,9 +33,9 @@ class Scale {
 	}
 	
 	/**
-	 * Adds a ball to the right plate
+	 * Adds a ball to the right plate.
 	 * 
-	 * @param ball
+	 * @param ball Ball to add.
 	 * @return void
 	 */
 	def addBallRight(ball)
@@ -36,7 +44,7 @@ class Scale {
 	}
 	
 	/**
-	 * Resets both plates to zero weight
+	 * Resets both plates to zero weight.
 	 * 
 	 * @return void
 	 */
@@ -47,18 +55,22 @@ class Scale {
 	
 	/**
 	 * Compares the weight on both plates and returns -1 if the left plate 
-	 * is heavier, 1 if the right plate is heavier, and 0 if they are equal
+	 * is heavier, 1 if the right plate is heavier, and 0 if they are equal.
+	 * 
 	 * @return integer
 	 */
 	def compare()
 	{
 		println rightWeight + " versus " + leftWeight
 			
-		if (rightWeight < leftWeight)
+		if (rightWeight < leftWeight) {
 			return -1
-		else if (rightWeight > leftWeight)
+		}
+		else if (rightWeight > leftWeight) {
 			return 1
-		else
+		}
+		else {
 			return 0
+		}
 	}
 }

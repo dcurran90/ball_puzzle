@@ -11,8 +11,19 @@ import com.rackspace.Puzzle.Ball
  *
  */
 class UserSession {
+	/**
+	 * A list of all the balls the user is testing
+	 */
 	ArrayList<Trial> trials
+	
+	/**
+	 * The number of trials the user has attempted
+	 */
 	def trialCount = 0
+	
+	/**
+	 * The heaviest ball
+	 */
 	def highestBall
 	
 	/**
