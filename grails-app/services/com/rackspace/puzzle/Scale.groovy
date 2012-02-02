@@ -2,40 +2,28 @@ package com.rackspace.Puzzle
 import com.rackspace.Puzzle.Ball
 
 class Scale {
-	ArrayList leftPlate = new ArrayList()
-	ArrayList rightPlate = new ArrayList()
+	def leftWeight = 0
+	def rightWeight = 0
 	def addBallLeft(ball)
 	{
-		leftPlate.add(ball)
+		leftWeight += ball.weight
 	}
 	def addBallRight(ball)
 	{
-		rightPlate.add(ball)
+		rightWeight += ball.weight
 	}
-	def removeBallsLeft()
+	def reset()
 	{
-		return leftPlate
-	}
-	def removeBallsRight()
-	{
-		return rightPlate
+		leftWeight = rightWeight = 0
 	}
 	def compare()
 	{
-		def leftWeight, rightWeight
-		leftWeight = 0
-		rightWeight = 0
-		for(ball in leftPlate)
-			leftWeight += ball.weight
-		for(ball in rightPlate)
-			rightWeight += ball.weight
+		println rightWeight + " versus " + leftWeight
 			
-		println rightWeight+" versus "+leftWeight
-			
-		if(rightWeight < leftWeight)
-			return 1
-		else if(rightWeight > leftWeight)
+		if (rightWeight < leftWeight)
 			return -1
+		else if (rightWeight > leftWeight)
+			return 1
 		else
 			return 0
 	}

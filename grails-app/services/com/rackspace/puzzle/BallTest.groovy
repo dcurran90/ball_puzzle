@@ -6,7 +6,6 @@ class BallTest {
 	static def main()
 	{
 		Random random = new Random()
-		def heavyBallSelected = false
 		Ball.ResetID()
 		ArrayList balls = new ArrayList()
 		Scale scale = new Scale()
@@ -16,8 +15,8 @@ class BallTest {
 		
 		balls[random.nextInt(7)].weight = 2.0
 		
-		for(ball in balls)
-			println ball.id+": "+ball.weight 
+		for (ball in balls)
+			println ball.id + ": " + ball.weight 
 			
 		scale.addBallLeft(balls[0])
 		scale.addBallLeft(balls[1])
@@ -28,9 +27,9 @@ class BallTest {
 		scale.addBallRight(balls[5])
 		
 		def result = scale.compare()
-		if(result<0)
+		if (result<0)
 			println "Left is lighter"
-		else if(result>0)
+		else if (result>0)
 			println "Right is lighter"
 		else
 			println "Both sides are even"
